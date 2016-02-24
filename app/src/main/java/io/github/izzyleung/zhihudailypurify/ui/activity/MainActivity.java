@@ -30,11 +30,12 @@ public class MainActivity extends BaseActivity {
 
         TabLayout tabs = (TabLayout) findViewById(R.id.main_pager_tabs);
         ViewPager viewPager = (ViewPager) findViewById(R.id.main_pager);
+        // 设置ViewPager幕后item的缓存数目
         viewPager.setOffscreenPageLimit(7);
 
         MainPagerAdapter adapter = new MainPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(adapter);
-        tabs.setupWithViewPager(viewPager);
+        viewPager.setAdapter(adapter); // 给ViewPager设置适配器
+        tabs.setupWithViewPager(viewPager); // 将TabLayout和ViewPager关联起来
 
         FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab_pick_date);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +68,8 @@ public class MainActivity extends BaseActivity {
         return true;
     }
 
+    // 注意 FragmentPagerAdapter与FragmentStatePagerAdapter区别。FragmentStatePagerAdapter和ListView
+    // 有点类似，会保存当前页面，以及下一个界面和上一个界面（如果有），最多保存3个，其他会被销毁掉。
     private class MainPagerAdapter extends FragmentStatePagerAdapter {
         public MainPagerAdapter(FragmentManager fm) {
             super(fm);

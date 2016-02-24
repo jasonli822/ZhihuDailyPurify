@@ -35,7 +35,9 @@ import io.github.izzyleung.zhihudailypurify.support.Check;
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.CardViewHolder> {
     private List<DailyNews> newsList;
 
+    // universal-image-loader 图片异步加载类库
     private ImageLoader imageLoader = ImageLoader.getInstance();
+    // DisplayImageOptions 配置图片显示的选型
     private DisplayImageOptions options = new DisplayImageOptions.Builder()
             .showImageOnLoading(R.drawable.noimage)
             .showImageOnFail(R.drawable.noimage)

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- CoordinatorLayout 实现了多种Material Design中提到的滚动效果 -->
 <android.support.design.widget.CoordinatorLayout
     style="@style/baseLayoutParam"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
+    <!-- 使用AppBarLayout允许Toolbar和其他视图(如提供标签的TabLayout)对标记了ScrollingViewBehavior的兄弟视图中的滚动事件产生反馈 -->
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,12 +21,14 @@
             style="@style/tabLayoutStyle"/>
     </android.support.design.widget.AppBarLayout>
 
+    <!-- ViewPager是android扩展包v4包中的类，这个类可以让用户左右切换当前的view -->
     <android.support.v4.view.ViewPager
         android:id="@+id/main_pager"
         style="@style/mainPagerStyle"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".ui.activity.MainActivity"/>
 
+    <!-- FloatingActionButton 实现了一个默认颜色为主题中colorAccent的悬浮操作按钮 -->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_pick_date"
         style="@style/floatingActionButtonStyle"/>

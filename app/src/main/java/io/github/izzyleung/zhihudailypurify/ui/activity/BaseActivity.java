@@ -16,6 +16,7 @@ public class BaseActivity extends AppCompatActivity {
 
         setContentView(layoutResID);
 
+        // 使用ToolBar替换ActionBar
         mToolBar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolBar);
     }

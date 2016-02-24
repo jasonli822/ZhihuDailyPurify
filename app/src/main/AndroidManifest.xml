@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.izzyleung.zhihudailypurify">
 
+    <!-- 获取internet访问权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 内置sd卡中进行写操作 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
